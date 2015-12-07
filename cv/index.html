@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<title>CV OnePage</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+	<link type="text/css" rel="stylesheet" href="css/style.css">
+	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="js/jquery-1.11.3.min.js"></script>
+	<script src="js/jquery.easing.min.js"></script>
+	<script src="js/jquery.mixitup.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/addheight.js"></script>
+	<script src="js/scrollmovement.js"></script>
+	<script type="text/javascript">
+    $(function () {
+        var filterList = {
+            init: function () {
+                // Plugin Mixitup, qui permet de filtrer les vignettes par catégorie
+                $('#portfoliolist').mixitup({
+                    targetSelector: '.portfolio',
+                    filterSelector: '.filter',
+                    effects: ['fade'],
+                    easing: 'snap',
+                    // call the hover effect
+                    onMixEnd: filterList.hoverEffect()
+                });
+            },
+            hoverEffect: function () {
+							// Fonction pour l'effet "hover"
+                $('#portfoliolist .portfolio').hover(
+                    function () {
+                        $(this).find('.label').stop().animate({bottom: 0}, 200, 'easeOutQuad');
+                        $(this).find('img').stop().animate({top: -30}, 500, 'easeOutQuad');
+                    },
+                    function () {
+                        $(this).find('.label').stop().animate({bottom: -40}, 200, 'easeInQuad');
+                        $(this).find('img').stop().animate({top: 0}, 300, 'easeOutQuad');
+                    }
+                );
+						}
+        };
+				// Lance les deux fonctions "hover" et "filtre"
+        filterList.init();
+		});
+
+		//auto expand textarea
+		function adjust_textarea(h) {
+    	h.style.height = "20px";
+    	h.style.height = (h.scrollHeight)+"px";
+		}
+    </script>
+</head>
+
+<body data-spy="scroll" data-target=".navbar">
+	<div class="container-fluid">
+		<nav class="navbar navbar-default navbar-fixed-top"> <!-- #nav -->
+    	<div class="container-fluid">
+      	<div class="navbar-header">
+        	<button type="button" data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+          <a href="#" class="navbar-brand">CV One Page</a>
+        </div>
+        <div class="collapse navbar-collapse">
+        	<ul class="nav navbar-nav">
+          	<li class="active"><a href="#presentation">Présentation</a></li>
+            <li><a href="#ambition">Ambition</a></li>
+            <li><a href="#experience">Expèrience</a></li>
+						<li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#info">Me contacter</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+		<section class="jumbotron" id="presentation"> <!-- #presentation -->
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+						<h3 class="titre-nom">Alexandre Caton</h3>
+					</div>
+					<div class="col-md-4  col-md-offset-4">
+						<img class="img-thumbnail  titre-photo" src="img/programming.jpg" alt="programming">
+					</div>
+					<div class="col-md-12">
+						<h1 class="well  text-center">Développeur web et mobile</h1>
+					</div>
+					<div class="col-md-12">
+						<ul>
+				  		<h3 class="underline">Parcours :</h3>
+				  		<li>
+							<p>
+							15 ans d'entretien, d'installation et de dépannage sur des machines électriques, mécaniques, pneumatiques, hydrauliques, frigorifiques et pompes à vide en milieu insdustriel et vitivinicole.
+							</p>
+							</li>
+							<h3 class="underline">Formation :</h3>
+				  		<li><h4>2011 :</h4><p>CACES cariste catégories 3</p></li>
+				  		<li><h4>1998 :</h4><p>BEP Electrotechnique</p></li>
+			  		</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="jumbotron" id="ambition"> <!-- #ambition -->
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+	 		  		<ul><br>
+			  			<h3 class="underline">Ambition :</h3>
+			  			<li>
+								<p class="pad">Apprendre des langages et framework pour devenir <strong>développeur web et mobile</strong></p>
+							</li>
+							<li class="mobile">
+								<img Class="img-ambition  pad" src="img/html.png" alt="html">
+								<img Class="img-ambition  pad" src="img/css.png" alt="css">
+								<img Class="img-ambition  pad" src="img/js.png" alt="javascript">
+								<img Class="img-ambition  pad" src="img/jquery-small.png" alt="jquery">
+								<img Class="img-ambition  pad" src="img/bootstrap-small.png" alt="bootstrap">
+								<img Class="img-ambition  pad" src="img/less-sass-small.png" alt="less sass">
+							</li>
+							<li class="tablet  mobile">
+								<img Class="img-ambition  pad" src="img/ruby_logo.png" alt="ruby">
+								<img Class="img-ambition  pad" src="img/Ruby_on_Rails_logo.png" alt="rails">
+								<img Class="img-ambition  pad" src="img/php-logo.png" alt="php">
+								<img Class="img-ambition  pad" src="img/mysql.png" alt="mysql">
+								<img Class="img-ambition  pad" src="img/meteor.png" alt="meteor">
+								<img Class="img-ambition  pad" src="img/angular.png" alt="angular">
+							</li>
+			  		</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="jumbotron" id="experience"> <!-- #experience -->
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<ul><br>
+							<h3 class="underline">Expèrience :</h3><br>
+							<li><h4>2012 à 2015 :</h4><p>Ouvrier agricole occasionnel</p></li>
+							<li><h4>2004 à 2012 :</h4><p>Technicien de maintenance SAV SAS Champagel à Epernay</p></li>
+							<li><h4>2001 à 2004 :</h4><p>Technicien de maintenance SAV Adresse Industrie à Oiry</p></li>
+							<li><h4>1998 à 2001 :</h4><p>Electrotechnicien PLV Concept à Porte-Les-Valence</p></li>
+							<li><h4>Eté 1998 :</h4><p>ELectrotechnicien Hugue Nicolette à Valence</p></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="jumbotron" id="portfolio"> <!-- #portfolio -->
+			<div class="container  conteneur">
+						<h3 class="underline">Portfolio :</h3>
+						<ul  id="filters" class="row  clearfix">
+							<li><span class="filter  active" data-filter="cat1 cat2 cat3 cat4">Toutes les catégories</span></li>
+							<li><span class="filter" data-filter="cat1">HTML/CSS</span></li>
+							<li><span class="filter" data-filter="cat2">Javascript</span></li>
+							<li><span class="filter" data-filter="cat3">Bootstrap</span></li>
+							<li><span class="filter" data-filter="cat4">PHP</span></li>
+						</ul>
+						<div id="portfoliolist">
+							<div class="portfolio  cat1" data-cat="cat1">
+								<div class="portfolio-wrapper">
+									<img src="img/01.jpg" alt="beer">
+									<div class="label">
+										<div class="label-text">
+											<a class="text-tilte">Beer</a>
+											<span class="text-category">HTML/CSS</span>
+										</div>
+										<div class="label-bg"></div>
+									</div>
+								</div>
+							</div>
+							<div class="portfolio  cat2" data-cat="cat2">
+								<div class="portfolio-wrapper">
+									<img src="img/02.jpg" alt="moto">
+									<div class="label">
+										<div class="label-text">
+											<a class="text-tilte">Moto</a>
+											<span class="text-category">Javascript</span>
+										</div>
+										<div class="label-bg"></div>
+									</div>
+								</div>
+							</div>
+							<div class="portfolio  cat3" data-cat="cat3">
+								<div class="portfolio-wrapper">
+									<img src="img/03.jpg" alt="venison">
+									<div class="label">
+										<div class="label-text">
+											<a class="text-tilte">Venison</a>
+											<span class="text-category">bootstrap</span>
+										</div>
+										<div class="label-bg"></div>
+									</div>
+								</div>
+							</div>
+							<div class="portfolio  cat4" data-cat="cat4">
+								<div class="portfolio-wrapper">
+									<img src="img/04.jpg" alt="ranger">
+									<div class="label">
+										<div class="label-text">
+											<a class="text-tilte">Ranger</a>
+											<span class="text-category">PHP</span>
+										</div>
+										<div class="label-bg"></div>
+									</div>
+								</div>
+							</div>
+							<div class="portfolio  cat1" data-cat="cat1">
+								<div class="portfolio-wrapper">
+									<img src="img/05.jpg" alt="one touch">
+									<div class="label">
+										<div class="label-text">
+											<a class="text-tilte">one touch</a>
+											<span class="text-category">HTML/CSS</span>
+										</div>
+										<div class="label-bg"></div>
+									</div>
+								</div>
+							</div>
+							<div class="portfolio  cat2" data-cat="cat2">
+								<div class="portfolio-wrapper">
+									<img src="img/06.jpg" alt="design">
+									<div class="label">
+										<div class="label-text">
+											<a class="text-tilte">design</a>
+											<span class="text-category">Javascript</span>
+										</div>
+										<div class="label-bg"></div>
+									</div>
+								</div>
+							</div>
+							<div class="portfolio  cat3" data-cat="cat3">
+								<div class="portfolio-wrapper">
+									<img src="img/07.jpg" alt="the new yorker">
+									<div class="label">
+										<div class="label-text">
+											<a class="text-tilte">the new yorker</a>
+											<span class="text-category">bootstrap</span>
+										</div>
+										<div class="label-bg"></div>
+									</div>
+								</div>
+							</div>
+							<div class="portfolio  cat4" data-cat="cat4">
+								<div class="portfolio-wrapper">
+									<img src="img/08.jpg" alt="ux">
+									<div class="label">
+										<div class="label-text">
+											<a class="text-tilte">UX</a>
+											<span class="text-category">PHP</span>
+										</div>
+										<div class="label-bg"></div>
+									</div>
+								</div>
+							</div>
+							<div class="portfolio  cat1" data-cat="cat1">
+								<div class="portfolio-wrapper">
+									<img src="img/09.jpg" alt="food sense">
+									<div class="label">
+										<div class="label-text">
+											<a class="text-tilte">food sense</a>
+											<span class="text-category">HTML/CSS</span>
+										</div>
+										<div class="label-bg"></div>
+									</div>
+								</div>
+							</div>
+							<div class="portfolio  cat2" data-cat="cat2">
+								<div class="portfolio-wrapper">
+									<img src="img/10.jpg" alt="southwest">
+									<div class="label">
+										<div class="label-text">
+											<a class="text-tilte">Southwest</a>
+											<span class="text-category">Javascript</span>
+										</div>
+										<div class="label-bg"></div>
+									</div>
+								</div>
+							</div>
+							<div class="portfolio  cat3" data-cat="cat3">
+								<div class="portfolio-wrapper">
+									<img src="img/11.jpg" alt="designbombs">
+									<div class="label">
+										<div class="label-text">
+											<a class="text-tilte">Designbombs</a>
+											<span class="text-category">Bootstrap</span>
+										</div>
+										<div class="label-bg"></div>
+									</div>
+								</div>
+							</div>
+							<div class="portfolio  cat4" data-cat="cat4">
+								<div class="portfolio-wrapper">
+									<img src="img/12.jpg" alt="pc">
+									<div class="label">
+										<div class="label-text">
+											<a class="text-tilte">PC</a>
+											<span class="text-category">PHP</span>
+										</div>
+										<div class="label-bg"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+				</div>
+		</section>
+		<section class="jumbotron" id="info"> <!-- #info -->
+			<div class="container">
+				<div class="row  info">
+					<div class="col-md-6">
+						<iframe class="img-thumbnail" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2833.499602349281!2d5.379514251283928!3d44.75022478871582!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12cab7c51a5de6ed%3A0x9424b5b6cff18569!2s12+Impasse+du+Pison%2C+26150+Die!5e0!3m2!1sfr!2sfr!4v1447082469496" frameborder="0" style="border:0" allowfullscreen width="100%">
+						</iframe>
+					</div>
+					<div class="col-md-6  text-center">
+						<div class="col-md-6  well">
+							<address><br>
+								<strong>Par courrier :</strong><br><br>
+								12 Rue du pison<br>
+								26150 DIE<br>
+							</address>
+						</div>
+						<div class="col-md-6  well">
+							<adress><br>
+								<strong>Par télèphone :</strong><br><br>
+								06-49-59-24-56<br><br><br>
+							</adress>
+						</div>
+					</div>
+						<div class="col-md-7"> <!-- #form -->
+							<form class="form-style" method="post" action="php/form-contact.php">
+								<h3>Par email :</h3>
+								<ul>
+									<li>
+										<label for="name">Nom</label>
+										<input type="text" name="name" maxlength="100">
+									</li>
+									<li>
+										<label for="prenom">Prénom</label>
+										<input type="text" name="prenom" maxlength="100">
+									</li>
+									<li>
+										<label for="email">Email</label>
+										<input type="email" name="email" maxlength="100">
+									</li>
+									<li>
+										<label for="message">Votre message</label>
+										<textarea name="message" onkeyup="adjust_textarea(this)"></textarea>
+									</li>
+									<li>
+										<input class="btn btn-primary" type="submit" value="Envoyer" >
+									</li>
+								</ul>
+							</form>
+						</div>
+				</div>
+			</div>
+		</section>
+	</div>
+</body>
+</html>
